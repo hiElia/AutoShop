@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop", "AutoShop\AutoSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop.Core", "AutoShop.Core\AutoShop.Core.csproj", "{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop.Data", "AutoShop.Data\AutoShop.Data.csproj", "{807F06E6-F308-4A6B-AA5D-A832886B4364}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{807F06E6-F308-4A6B-AA5D-A832886B4364}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{807F06E6-F308-4A6B-AA5D-A832886B4364}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{807F06E6-F308-4A6B-AA5D-A832886B4364}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{807F06E6-F308-4A6B-AA5D-A832886B4364}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
