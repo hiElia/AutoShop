@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AutoShop.Data
 {
-    interface ICarShopData
+    public interface ICarShopData
     {
     }
 }
