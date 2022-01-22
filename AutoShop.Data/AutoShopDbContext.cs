@@ -8,6 +8,11 @@ namespace AutoShop.Data
 {
     public class AutoShopDbContext : DbContext
     {
+        public AutoShopDbContext(DbContextOptions<AutoShopDbContext> options)
+         : base(options)
+        {
+           
+        }
         public DbSet<Employee> employees { get; set; }
         public DbSet<Sale> sales { get; set; }
         public DbSet<Carmodel> carmodels { get; set; }
