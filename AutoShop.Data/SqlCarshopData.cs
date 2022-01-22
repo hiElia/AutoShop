@@ -1,58 +1,100 @@
 ﻿using AutoShop.Core;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AutoShop.Data
 {
-    public class SqlCarshopData : ICarShopData
+    public class SqlCarShopData : ICarShopData
     {
+        private readonly AutoShopDbContext db;
+
+        public SqlCarShopData(AutoShopDbContext db)
+        {
+            this.db = db;
+        }
         public Employee Add(Employee newEmployee)
         {
-            throw new System.NotImplementedException();
+            db.Add(newEmployee);
+            return newEmployee;
         }
 
         public Carmodel Add(Carmodel newCarmodel)
         {
-            throw new System.NotImplementedException();
+            db.Add(newCarmodel);
+            return newCarmodel;
         }
 
         public int Commit()
         {
-            throw new System.NotImplementedException();
+            return db.SaveChanges();
         }
 
         public Employee Delete(int id)
         {
-            throw new System.NotImplementedException();
+            var employee = GetById(id);
+            if (employee != null)
+            {
+                db.employees.Remove(employee);
+
+
+            }
+            return employee;
         }
 
         public Carmodel DeleteModel(int id)
         {
-            throw new System.NotImplementedException();
+            var carmodel = GetCarModelById(id);
+            if (carmodel != null)
+            {
+                db.carmodels.Remove(carmodel);
+
+
+            }
+            return carmodel;
         }
 
         public Employee GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return db.employees.Find(id);
+        }
+
+        public Carmodel GetCarModelById(int id)
+        {
+            return db.carmodels.Find(id);
         }
 
         public IEnumerable<Carmodel> GetCarmodelByName(string name)
         {
-            throw new System.NotImplementedException();
+            var query = from r in db.carmodels
+                        where r.model.StartsWith(name) || string.IsNullOrEmpty(name)
+                        orderby r.model
+                        select r;
+            return query;
         }
 
         public IEnumerable<Employee> GetEmployeeByName(string name)
         {
-            throw new System.NotImplementedException();
+            var query = from r in db.employees
+                        where r.name.StartsWith(name) || string.IsNullOrEmpty(name)
+                        orderby r.name
+                        select r;
+            return query;
         }
 
         public Employee Update(Employee updatedEmployee)
         {
-            throw new System.NotImplementedException();
+            var entity = db.employees.Attach(updatedEmployee);
+            entity.State = EntityState.Modified;
+            return updatedEmployee;
         }
 
         public Carmodel Update(Carmodel updatedCarmodel)
         {
-            throw new System.NotImplementedException();
+            var entity = db.carmodels.Attach(updatedCarmodel);
+            entity.State = EntityState.Modified;
+            return updatedCarmodel;
+
         }
     }
 }

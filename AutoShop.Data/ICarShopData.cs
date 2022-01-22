@@ -15,6 +15,7 @@ namespace AutoShop.Data
 
         // carmodel
         IEnumerable<Carmodel> GetCarmodelByName(string name);
+        Carmodel GetCarModelById(int id);
         Carmodel Update(Carmodel updatedCarmodel);
         Carmodel Add(Carmodel newCarmodel);
         Carmodel DeleteModel(int id);
