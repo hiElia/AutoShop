@@ -1,0 +1,21 @@
+﻿@page
+@model AutoShop.Pages.Employees.ClientEmployeesModel
+@{
+    ViewData["Title"] = "ClientEmployees";
+}
+
+<h2>Client Employees</h2>
+@section Scripts{
+<script>
+    $(function () {
+
+        $.ajax("/api/employees/", { method: "get" })
+            .then(function (response) {
+                console.dir(response)
+            });
+    });
+
+</script>
+
+
+}
