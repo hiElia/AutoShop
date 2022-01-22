@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AutoShop.Core
 {
-    class Employee
+    public class Employee
     {
       
             public int id { get; set; }
