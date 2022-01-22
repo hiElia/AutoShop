@@ -10,6 +10,6 @@ namespace AutoShop.Core
             public int id { get; set; }
             public int employee_id { get; set; }
             public int carmodel_id { get; set; }
-        
+            public int totalSales { get; set; }
     }
 }
