@@ -1,0 +1,37 @@
+﻿@page
+@model AutoShop.Pages.CarModels.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Carmodel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.brand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.brand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Carmodel.id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
