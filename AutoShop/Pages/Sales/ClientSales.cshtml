@@ -1,13 +1,10 @@
 ﻿@page
-@model AutoShop.Pages.Employees.ClientEmployeesModel
+@model AutoShop.Pages.Sales.ClientSalesModel
 @{
-    ViewData["Title"] = "ClientEmployees";
 }
-
-<h2>Client Employees</h2>
-<table class="table" id="employees">
+<h2>Client sales</h2>
+<table class="table" id="sales">
 </table>
-
 @section Scripts{
     <environment include="Development">
 
@@ -27,13 +24,14 @@
     <script>
         $(function () {
 
-            $.ajax("/api/employees/", { method: "get" })
+            $.ajax("/api/sales/", { method: "get" })
                 .then(function (response) {
-                    $("#employees").dataTable({
+                    $("#sales").dataTable({
                         data: response,
                         columns: [
                             { "data": "id" },
-                            { "data": "name" }
+                            { "data": "employee_id" },
+                            { "data": "carmodel_id" }
 
 
                         ]
@@ -45,6 +43,16 @@
 
     </script>
 
+    @*<script>
+        $(function () {
+
+            $.ajax("/api/sales/", { method: "get" })
+                .then(function (response) {
+                    console.dir(response)
+                });
+        });
+
+        </script>*@
+
 
 }
- 

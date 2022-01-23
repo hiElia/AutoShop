@@ -1,4 +1,5 @@
 ﻿using AutoShop.Core;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace AutoShop.Data
 {
-    public class AutoShopDbContext : DbContext
+    public class AutoShopDbContext : IdentityDbContext
     {
         public AutoShopDbContext(DbContextOptions<AutoShopDbContext> options)
          : base(options)

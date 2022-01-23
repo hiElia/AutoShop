@@ -19,6 +19,8 @@ namespace AutoShop.Data
         Carmodel Update(Carmodel updatedCarmodel);
         Carmodel Add(Carmodel newCarmodel);
         Carmodel DeleteModel(int id);
+        // sales
+        IEnumerable<Sale> GetTotalSales(string name);
         int Commit();
 
     }

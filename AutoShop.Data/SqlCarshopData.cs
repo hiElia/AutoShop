@@ -82,6 +82,15 @@ namespace AutoShop.Data
             return query;
         }
 
+        public IEnumerable<Sale> GetTotalSales(string name)
+        {
+            var query = from r in db.sales
+                        where string.IsNullOrEmpty(name)
+                        orderby r.employee_id
+                        select r;
+            return query;
+        }
+
         public Employee Update(Employee updatedEmployee)
         {
             var entity = db.employees.Attach(updatedEmployee);
