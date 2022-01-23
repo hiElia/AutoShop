@@ -9,6 +9,9 @@ namespace AutoShop.Data
 {
     public class AutoShopDbContext : IdentityDbContext
     {
+        
+
+
         public AutoShopDbContext(DbContextOptions<AutoShopDbContext> options)
          : base(options)
         {
@@ -18,5 +21,8 @@ namespace AutoShop.Data
         public DbSet<Sale> sales { get; set; }
         public DbSet<Carmodel> carmodels { get; set; }
         public DbSet<Carshop> carshops { get; set; }
+
+       
+
     }
 }

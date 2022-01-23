@@ -17,7 +17,7 @@ namespace AutoShop
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+               public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -64,6 +64,8 @@ namespace AutoShop
             app.UseStaticFiles();
             app.UseNodeModules(env);
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }
