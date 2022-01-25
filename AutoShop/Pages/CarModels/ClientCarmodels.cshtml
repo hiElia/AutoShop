@@ -1,0 +1,51 @@
+﻿@page
+@model AutoShop.Pages.CarModels.ClientCarmodelsModel
+@{
+    ViewData["Title"] = "ClientCarModels";
+}
+
+
+<h2>Client CarModels</h2>
+<table class="table" id="carmodels">
+</table>
+@section Scripts{
+    <environment include="Development">
+
+        <script src="~/node_modules\datatables.net\js\jquery.dataTables.js"></script>
+        <script src="~/node_modules\datatables.net-bs\js\dataTables.bootstrap.js"></script>
+        <link href="~/node_modules\datatables.net-bs\css\dataTables.bootstrap.css" rel="stylesheet" />
+
+
+
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css" />
+
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.js"></script>
+
+    </environment>
+    <script>
+        $(function () {
+
+            $.ajax("/api/carmodels/", { method: "get" })
+                .then(function (response) {
+                    $("#carmodels").dataTable({
+                        data: response,
+                        columns: [
+                            { "data": "id" },
+                            { "data": "brand" },
+                            { "data": "model" },
+                            { "data": "price" },
+
+
+                        ]
+                    })
+                });
+
+
+        });
+
+    </script>
+
+
+}
