@@ -30,9 +30,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/Index">Home</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-page="/employees/clientemployees">Employee</a></li>
+                    <li><a asp-page="/CarModels">CreatCarModels</a></li>
+                    <li><a asp-page="/carmodels/clientcarmodels">CarModels</a></li>
+                    <li><a asp-page="/sales/clientsales">Sales</a></li>
+                    <li class="nav-item">
+                        <a asp-action="register" asp-controller="Account" class="navbar-link">Register</a>
+                    </li>
                 </ul>
             </div>
         </div>
