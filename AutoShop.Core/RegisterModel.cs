@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
@@ -12,13 +13,14 @@ namespace AutoShop.Core
         public string Email { get; set; }
 
         [Required]
+        [BindProperty(SupportsGet = true)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [DataType(DataType.Password)]
-        [Display(Name = "Comfirm Password")]
-        [Compare("password", ErrorMessage = "password and confirmation password" +
-            "do not match")]
-
+        [Required]
+        [BindProperty(SupportsGet = true)]
+        [DataType(DataType.Password)]        
+        [Display(Name = "Confirm Password")]        
+        [Compare("Password", ErrorMessage = "password and confirmation password do not match")]
         public string ConfirmPassword { get; set; }
     }
 }
