@@ -178,4 +178,8 @@
     <ProjectReference Include="..\AutoShop.Data\AutoShop.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>

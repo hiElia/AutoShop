@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop", "AutoShop\AutoShop.csproj", "{A8C774F4-CB99-4FE7-AC0A-570B7AFBE27F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoShop", "AutoShop\AutoShop.csproj", "{A8C774F4-CB99-4FE7-AC0A-570B7AFBE27F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop.Core", "AutoShop.Core\AutoShop.Core.csproj", "{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoShop.Core", "AutoShop.Core\AutoShop.Core.csproj", "{D13CCBD5-DA15-464E-B736-56F7D61BC0BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoShop.Data", "AutoShop.Data\AutoShop.Data.csproj", "{807F06E6-F308-4A6B-AA5D-A832886B4364}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoShop.Data", "AutoShop.Data\AutoShop.Data.csproj", "{807F06E6-F308-4A6B-AA5D-A832886B4364}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
