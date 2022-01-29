@@ -46,6 +46,36 @@ namespace AutoShop.Api
 
             return Ok(sale);
         }
+        // GET: api/Sales/Employee/2
+        [HttpGet("employee/{id}")]
+        public async Task<IActionResult> GetSalesByEmployeeId([FromRoute] int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            //var result = _salesService.GetSalesByEmployeeId(id);
+            //return Ok(result); 
+            //EF using .Include() after fixing the Foreign currency
+            //Possible improvement
+            //Separation of concern - keep the context in data layer
+            //                      - Create business layer that does the logic and pass the result in view model
+            //                      - Add tests
+            //                      - do the frontend with react
+            //                      - Adding the authorization on functions to change data
+            var salesByEmployee = await _context.sales.Where(s => s.employee_id == id).ToListAsync();
+            var carmodels = await _context.carmodels.ToListAsync();
+            var totalSales = 0;
+            salesByEmployee.ForEach(sales =>
+            {
+                var soldCar = carmodels.FirstOrDefault(c => c.id == sales.carmodel_id);
+                var price = soldCar.price; 
+                totalSales += price;
+            });
+            var employee = await _context.employees.FindAsync(id);
+
+            return Ok(new { Name = employee.name, Sales =  totalSales });
+        }
 
         // PUT: api/Sales/5
         [HttpPut("{id}")]

@@ -1,8 +1,11 @@
-﻿@page
-@model AutoShop.Core.RegisterModel
-@{
+﻿@{
+    ViewData["Title"] = "Index";
 }
-<h2>user register</h2>
+
+<h2>Index</h2>
+
+<p>Hello from our View Template!</p>
+
 <div class="row">
     <div class="col-md-12">
         <form method="post">
@@ -10,7 +13,7 @@
 
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Emails" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">

@@ -6,18 +6,19 @@ using System.Text;
 
 namespace AutoShop.Core
 {
-    public class RegisterModel
+    public class RegisterViewModel
     {
+        public int id { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
-        [BindProperty(SupportsGet = true)]
+        //[BindProperty(SupportsGet = true)]
         [DataType(DataType.Password)]
         public string Password { get; set; }
         [Required]
-        [BindProperty(SupportsGet = true)]
+        //[BindProperty(SupportsGet = true)]
         [DataType(DataType.Password)]        
         [Display(Name = "Confirm Password")]        
         [Compare("Password", ErrorMessage = "password and confirmation password do not match")]

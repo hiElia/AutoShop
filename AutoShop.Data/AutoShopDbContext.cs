@@ -21,6 +21,7 @@ namespace AutoShop.Data
         public DbSet<Sale> sales { get; set; }
         public DbSet<Carmodel> carmodels { get; set; }
         public DbSet<Carshop> carshops { get; set; }
+        //public DbSet<RegisterViewModel> registerViewModels { get; set; }
     
 
 
