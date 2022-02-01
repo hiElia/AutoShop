@@ -1,0 +1,48 @@
+﻿@page
+@model AutoShop.Pages.CarModel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Carmodel[0].brand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carmodel[0].model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Carmodel[0].price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Carmodel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

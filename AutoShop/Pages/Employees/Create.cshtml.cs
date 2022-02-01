@@ -35,6 +35,7 @@ namespace AutoShop.Pages.Employees
             }
 
             _context.employees.Add(Employee);
+            Employee.id = _context.employees.Max(e => e.id) + 1;
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

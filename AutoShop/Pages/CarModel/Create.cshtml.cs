@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using AutoShop.Core;
 using AutoShop.Data;
 
-namespace AutoShop.Pages.CarModels
+namespace AutoShop.Pages.CarModel
 {
     public class CreateModel : PageModel
     {
@@ -36,6 +36,7 @@ namespace AutoShop.Pages.CarModels
 
             _context.carmodels.Add(Carmodel);
             Carmodel.id = _context.carmodels.Max(c => c.id) + 1;
+           
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

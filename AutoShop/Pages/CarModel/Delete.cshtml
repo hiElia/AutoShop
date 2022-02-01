@@ -1,0 +1,40 @@
+﻿@page
+@model AutoShop.Pages.CarModel.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Carmodel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.brand)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.brand)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.model)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.model)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Carmodel.price)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Carmodel.price)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Carmodel.id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
