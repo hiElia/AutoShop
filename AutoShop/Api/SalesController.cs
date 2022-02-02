@@ -54,15 +54,7 @@ namespace AutoShop.Api
             {
                 return BadRequest(ModelState);
             }
-            //var result = _salesService.GetSalesByEmployeeId(id);
-            //return Ok(result); 
-            //EF using .Include() after fixing the Foreign currency
-            //Possible improvement
-            //Separation of concern - keep the context in data layer
-            //                      - Create business layer that does the logic and pass the result in view model
-            //                      - Add tests
-            //                      - do the frontend with react
-            //                      - Adding the authorization on functions to change data
+           
             var salesByEmployee = await _context.sales.Where(s => s.employee_id == id).ToListAsync();
             var carmodels = await _context.carmodels.ToListAsync();
             var totalSales = 0;
