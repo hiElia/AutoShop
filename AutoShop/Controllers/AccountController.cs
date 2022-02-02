@@ -15,10 +15,7 @@ namespace AutoShop.Controllers
       
         
         private readonly UserManager<IdentityUser> userManager;
-        private readonly SignInManager<IdentityUser> signInManager;
-
-
-        //public IEnumerable<RegModel> regModels { get; set; }
+        private readonly SignInManager<IdentityUser> signInManager;     
 
 
 
